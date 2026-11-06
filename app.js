@@ -54,7 +54,7 @@ const projectData = {
     "java-fx": {
         title: "Compilador de animaciones en JAVA FX",
         description: "Compilador educativo desarrollado con JFlex y CUP, con interfaz en JavaFX. Interpreta un lenguaje propio con sintaxis simplificada (estilo Python), diseñado específicamente para introducir a niños de primaria en la lógica de programación. Elimina abstracciones complejas para que el usuario pueda crear animaciones gráficas de forma intuitiva y visual. El proyecto incluye documentación completa, ejemplos y un ejecutable para Linux.",
-        videoPath: "https://drive.google.com/file/d/1Cgc9Hjl3kp5dcUd5L52ZNlcuVLP8eTyW/view?usp=drive_link",
+        videoPath: "videos/ejemplos.webm",
         pdfLink: "manuales/Manual_Tecnico_Compilador.pdf",
         examplesLink: "manuales/Ejemplos_Compilador.pdf",
         downloads: {
