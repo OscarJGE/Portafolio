@@ -172,7 +172,7 @@ function renderModalContent(data) {
     modalTitle.innerText = data.title;
     
     // PREPARAR BOTONES DE DESCARGA O REPOSITORIO
-    let buttonsHTML = ''; 
+    let buttonsHTML += `<a href="${data.downloads.linux}" target="_blank" rel="noopener" class="btn-os btn-linux">Linux (.deb)</a>`;
 
     if (data.downloads) {
         /*if (data.downloads.windows) {
