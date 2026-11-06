@@ -60,7 +60,7 @@ const projectData = {
         downloads: {
             windows: "descargas/compilador-win.exe",
             mac: "descargas/compilador-mac.dmg",
-            linux: "descargas/kinderfes_1.0-1_amd64.deb"
+            linux: "https://drive.google.com/file/d/1loCwOWgm2wp3YXEBJD-Zq4WMxi6-quOD/view?usp=sharing"
         }
     },
     "lockers": {
@@ -182,7 +182,9 @@ function renderModalContent(data) {
             buttonsHTML += `<a href="${data.downloads.mac}" class="btn-os btn-mac" download>MacOS (.dmg)</a> `;
         }*/
         if (data.downloads.linux) {
-            buttonsHTML += `<a href="${data.downloads.linux}" class="btn-os btn-linux" download>Linux (.deb)</a>`;
+            const esExterno = data.downloads.linux.startsWith("http");
+            const attrs = esExterno ? 'target="_blank" rel="noopener"' : 'download';
+            buttonsHTML += `<a href="${data.downloads.linux}" class="btn-os btn-linux" ${attrs}>Linux (.deb)</a>`;
         }
     }
 
