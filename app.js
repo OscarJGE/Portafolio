@@ -54,7 +54,7 @@ const projectData = {
     "java-fx": {
         title: "Compilador de animaciones en JAVA FX",
         description: "Compilador educativo desarrollado con JFlex y CUP, con interfaz en JavaFX. Interpreta un lenguaje propio con sintaxis simplificada (estilo Python), diseñado específicamente para introducir a niños de primaria en la lógica de programación. Elimina abstracciones complejas para que el usuario pueda crear animaciones gráficas de forma intuitiva y visual. El proyecto incluye documentación completa, ejemplos y un ejecutable para Linux.",
-        videoPath: "videos/ejemplos.webm",
+        videoPath: "https://drive.google.com/file/d/1Cgc9Hjl3kp5dcUd5L52ZNlcuVLP8eTyW/view?usp=drive_link",
         pdfLink: "manuales/Manual_Tecnico_Compilador.pdf",
         examplesLink: "manuales/Ejemplos_Compilador.pdf",
         downloads: {
@@ -108,7 +108,7 @@ const projectData = {
     "busqueda-grafo": {
         title: "Algoritmos de búsqueda en un grafo",
         description: "Este proyecto consiste en una herramienta gráfica desarrollada en JavaFX diseñada para el estudio, simulación y comprensión visual de algoritmos clásicos de búsqueda en inteligencia artificial y teoría de grafos, permitiendo simular de forma dinámica estrategias de resolución de problemas como algoritmos no heurísticos (Búsqueda en Anchura [BFS] y Búsqueda en Profundidad [DFS]) y heurísticos (Escalada Simple, Escalada de Máxima Pendiente y Primero-Mejor [Best-First Search]), con una interfaz que facilita la interacción con los nodos y aristas para observar en tiempo real el orden de evaluación, la expansión de estados y la ruta solución seleccionada por cada algoritmo.",
-        videoPath: "videos/Busquedas.mp4",
+        videoPath: "https://drive.google.com/file/d/1-5pqbtT-uijIfhCcINj6RGj5BHmH3qHV/view?usp=drive_link",
         downloads: {
             linux: "descargas/ia-busquedas_1.0-1_amd64.deb"
         },
@@ -231,7 +231,20 @@ function renderModalContent(data) {
     let htmlContent = "";
 
     // A. VIDEO
-    if (data.videoPath) {
+if (data.videoPath) {
+    const esDrive = data.videoPath.includes("drive.google.com");
+
+    if (esDrive) {
+        htmlContent += `
+            <div class="media-title"></div>
+            <div class="video-container" style="margin-bottom: 25px; position: relative; width: 100%; aspect-ratio: 16/9;">
+                <iframe src="${data.videoPath}"
+                        style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 8px;"
+                        allow="autoplay; fullscreen"
+                        allowfullscreen></iframe>
+            </div>
+        `;
+    } else {
         htmlContent += `
             <div class="media-title"></div>
             <div class="video-container" style="margin-bottom: 25px;">
@@ -242,6 +255,7 @@ function renderModalContent(data) {
             </div>
         `;
     }
+}
 
     // B. DESCRIPCIÓN 
     htmlContent += `
